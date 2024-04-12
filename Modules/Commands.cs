@@ -8,6 +8,9 @@ using DisCatSharp.Entities;
 using DisCatSharp.Common.Utilities;
 using DisCatSharp.VoiceNext.EventArgs;
 using System.Diagnostics;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Text.Json;
+using Utils.API;
 
 
 namespace DiscordBot.Modules;
@@ -21,6 +24,16 @@ public class Commands : BaseCommandModule
     {
         await ctx.RespondAsync(Embed.GetCustomHelpCommandEmbed(ctx));
     }
+
+    [Command("register")]
+    public async Task Registered(CommandContext _, int UID)
+    {
+        //Todo
+        //Check DB for UID based on Discord User PRIMARY KEY
+        //if not exists, Store UID into DB
+        await Utils.API.Initializing.CallAPI(UID);
+    }
+
 
     [Command("join")]
     public async Task StartCommand(CommandContext ctx, DiscordChannel channel = null)

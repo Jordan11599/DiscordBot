@@ -36,7 +36,7 @@ class Program
 
         var commands = discord.UseCommandsNext(new CommandsNextConfiguration()
         {
-            StringPrefixes = new List<string> { "$" }
+            StringPrefixes = new List<string> { ";" }
         });
 
         commands.RegisterCommands(Assembly.GetExecutingAssembly());
