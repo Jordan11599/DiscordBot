@@ -27,7 +27,7 @@ class Program
 
         var discord = new DiscordClient(new DiscordConfiguration()
         {
-            Token = secret?.Token,
+            Token = secret?.token,
             TokenType = TokenType.Bot,
             Intents = DiscordIntents.AllUnprivileged | DiscordIntents.MessageContent
         });

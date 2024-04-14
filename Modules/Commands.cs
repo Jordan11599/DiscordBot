@@ -26,7 +26,7 @@ public class Commands : BaseCommandModule
     }
 
     [Command("register")]
-    public async Task Registered(CommandContext _, int UID)
+    public async Task Registered(CommandContext _, int UID) 
     {
         //Todo
         //Check DB for UID based on Discord User PRIMARY KEY
@@ -34,6 +34,16 @@ public class Commands : BaseCommandModule
         await Utils.API.Initializing.CallAPI(UID);
     }
 
+    
+    [Command("characters"), Aliases("character")]
+    public async Task ttt(CommandContext ctx)
+    {
+        await ctx.RespondAsync($"This is a test");
+        //Todo
+        //Check DB for UID based on Discord User PRIMARY KEY
+        //if not exists, Store UID into DB
+        //await Utils.API.Initializing.CallAPI(UID);
+    }
 
     [Command("join")]
     public async Task StartCommand(CommandContext ctx, DiscordChannel channel = null)

@@ -1,7 +1,7 @@
 ﻿public class Config
 {
-    public string Token { get; set; }
+    public string token { get; set; }
 
-    public string Prefix { get; set; }
+    public string prefix { get; set; }
 
 }
