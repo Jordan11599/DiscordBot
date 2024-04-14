@@ -3,17 +3,17 @@
 namespace DiscordBot.Models;
 public class Skills
 {
-    public string id { get; set; }
-    public string name { get; set; }
-    public int level { get; set; }
-    public int max_level { get; set; }
-    public Element element { get; set; }
-    public string type { get; set; }
-    public string type_text { get; set; }
-    public string effect { get; set; }
-    public string effect_text { get; set; }
-    public string simple_desc { get; set; }
-    public string desc { get; set; }
-    public string icon { get; set; }
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public int Level { get; set; }
+    public int Max_Level { get; set; }
+    public Element Element { get; set; }
+    public string Type { get; set; }
+    public string Type_Text { get; set; }
+    public string Effect { get; set; }
+    public string Effect_Text { get; set; }
+    public string Simple_Desc { get; set; }
+    public string Desc { get; set; }
+    public string Icon { get; set; }
 
 }

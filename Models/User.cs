@@ -1,12 +1,12 @@
 ﻿namespace DiscordBot.Models;
 public class User
 {
-    public string discordid { get; set; }
+    public string Discord_Id { get; set; }
 
-    public string uid { get; set; }
+    public string UID { get; set; }
 
-    public Player player { get; set; }
+    public Player Player { get; set; }
 
-    public List<Characters> characters { get; set; }
+    public List<Characters> Characters { get; set; }
 
 }

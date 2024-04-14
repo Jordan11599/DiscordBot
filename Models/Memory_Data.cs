@@ -1,8 +1,8 @@
 ﻿namespace DiscordBot.Models;
 public class Memory_Data
 {
-    public int level { get; set; }
-    public int chaos_id { get; set; }
-    public int chaos_level { get; set; }
+    public int Level { get; set; }
+    public int Chaos_Id { get; set; }
+    public int Chaos_Level { get; set; }
 
 }

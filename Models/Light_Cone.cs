@@ -1,17 +1,17 @@
 ﻿namespace DiscordBot.Models;
 public class Light_Cone
 {
-    public string id { get; set; }
-    public string name { get; set; }
-    public int rarity { get; set; }
-    public int rank { get; set; }
-    public int level { get; set; }
-    public int promotion { get; set; }
-    public string icon { get; set; }
-    public string preview { get; set; }
-    public string portrait { get; set; }
-    public Path path { get; set; }
-    public List<Attributes> attributes { get; set; }
-    public List<Properties> properties { get; set; }
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public int Rarity { get; set; }
+    public int Rank { get; set; }
+    public int Level { get; set; }
+    public int Promotion { get; set; }
+    public string Icon { get; set; }
+    public string Preview { get; set; }
+    public string Portrait { get; set; }
+    public Path Path { get; set; }
+    public List<Attributes> Attributes { get; set; }
+    public List<Properties> Properties { get; set; }
 
 }

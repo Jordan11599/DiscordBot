@@ -1,10 +1,10 @@
 ﻿namespace DiscordBot.Models;
 public class Relic_Sets
 {
-    public string id { get; set; }
-    public string name { get; set; }
-    public string icon { get; set; }
-    public int num { get; set; }
-    public string desc { get; set;}
-    public Properties properties { get; set; }
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public string Icon { get; set; }
+    public int Num { get; set; }
+    public string Desc { get; set;}
+    public Properties Properties { get; set; }
 }
