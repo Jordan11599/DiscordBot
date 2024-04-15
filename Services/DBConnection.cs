@@ -5,6 +5,7 @@ using DiscordBot.Models;
 public class DBConnection : DbContext
 {
     public DbSet<User> User { get; set; }
+    //public DbSet<Characters> Characters { get; set; }
 
     public string DbPath { get; }
 

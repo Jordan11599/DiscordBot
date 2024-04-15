@@ -12,6 +12,6 @@ public class User
 
     public Player Player { get; set; }
 
-    public List<Characters> Characters { get; set; }
+    public virtual ICollection<Characters> Characters { get; set; }
 
 }

@@ -13,5 +13,5 @@ public class Relic_Sets
     public string Icon { get; set; }
     public int Num { get; set; }
     public string Desc { get; set;}
-    public List<Properties> Properties { get; set; }
+    public virtual ICollection<Properties> Properties { get; set; }
 }

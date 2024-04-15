@@ -13,16 +13,16 @@ public class Characters
     public int Promotion { get; set; }
     public string Icon { get; set; }
     public string Preview { get; set; }
-    public List<string> Rank_Icons { get; set; }
+    public virtual ICollection<string> Rank_Icons { get; set; }
     public Path? Path { get; set; }
     public Element? Element { get; set; }
-    public List<Skills> Skills { get; set; }
-    public List<Skill_Trees> Skill_Trees { get; set; }
+    public virtual ICollection<Skills> Skills { get; set; }
+    public virtual ICollection<Skill_Trees> Skill_Trees { get; set; }
     public Light_Cone? Light_Cone { get; set; }
-    public List<Relics> Relics { get; set; }
-    public List<Relic_Sets> Relic_Sets { get; set; }
-    public List<Attributes> Attributes { get; set; }
-    public List<Additions> Additions { get; set; }
-    public List<Properties> Properties { get; set; }
+    public virtual ICollection<Relics> Relics { get; set; }
+    public virtual ICollection<Relic_Sets> Relic_Sets { get; set; }
+    public virtual ICollection<Attributes> Attributes { get; set; }
+    public virtual ICollection<Additions> Additions { get; set; }
+    public virtual ICollection<Properties> Properties { get; set; }
 
 }

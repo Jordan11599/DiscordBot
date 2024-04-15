@@ -12,6 +12,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Text.Json;
 using Utils.API;
 using DiscordBot.Models;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace DiscordBot.Modules;
@@ -46,8 +47,8 @@ public class Commands : BaseCommandModule
         try
         {
             //change weee to ctx.discord_id later
-            user.Discord_Id = "WEEEEEEEE";
-            user.UID = "WOOOOOOOO";
+            user.Discord_Id = "Value_Discord_Id";
+            user.UID = "Value_UID";
             var success = _connection.User.Add(user);
             _connection.SaveChanges();
         } catch (Exception ex)
@@ -55,17 +56,16 @@ public class Commands : BaseCommandModule
             Console.WriteLine(ex);
         }
 
-        //var test = _connection.User.First();
 
-
-        await ctx.RespondAsync(_connection.User.First().Player.Nickname);
-        
-        
+        foreach (var character in _connection.User.First().Characters)
+        {
+            await ctx.RespondAsync(character.Icon);
+        } 
     }
 
     
     [Command("characters"), Aliases("character")]
-    public async Task ttt(CommandContext ctx)
+    public async Task Characters(CommandContext ctx)
     {
         await ctx.RespondAsync($"This is a test");
         //Todo
