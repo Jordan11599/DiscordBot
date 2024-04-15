@@ -11,6 +11,7 @@ using System.Diagnostics;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Text.Json;
 using Utils.API;
+using DiscordBot.Models;
 
 
 namespace DiscordBot.Modules;
@@ -18,20 +19,49 @@ namespace DiscordBot.Modules;
 
 public class Commands : BaseCommandModule
 {
+    private DBConnection _connection;
+    public Commands(DBConnection DBConnection){
 
-    [Command("test")]
-    public async Task Help(CommandContext ctx)
+        _connection = DBConnection;
+        
+    }
+
+    
+
+
+    [Command("getdata")]
+    public async Task getdata(CommandContext ctx)
     {
-        await ctx.RespondAsync(Embed.GetCustomHelpCommandEmbed(ctx));
+        
+        await ctx.RespondAsync("a");
+        //await ctx.RespondAsync(Embed.GetCustomHelpCommandEmbed(ctx));
     }
 
     [Command("register")]
-    public async Task Registered(CommandContext _, int UID) 
+    public async Task Registered(CommandContext ctx, int UID)
     {
-        //Todo
-        //Check DB for UID based on Discord User PRIMARY KEY
-        //if not exists, Store UID into DB
-        await Utils.API.Initializing.CallAPI(UID);
+        var user = await Utils.API.Initializing.CallAPI(UID);
+        try
+        {
+            _connection.User.Add(user);
+        } catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            // "The instance of entity type 'Element' cannot be tracked because another instance
+            // with the same key value for {'Id'} is already being tracked. When attaching existing
+            // entities, ensure that only one entity instance with a given key value is attached.
+            // Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting
+            // key values."}
+            //Tomorrows issue!
+
+        }
+
+        //var test = _connection.User.First();
+
+
+        await ctx.RespondAsync(_connection.User.First().Player.Nickname);
+        
+        
     }
 
     

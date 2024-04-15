@@ -1,6 +1,7 @@
 ﻿namespace DiscordBot.Models;
 public class Skill_Trees
 {
+    public int Skill_TreesId { get; set; }
     public string Id { get; set; }
     public int Level { get; set; }
     public string Anchor { get; set; }

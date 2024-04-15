@@ -1,6 +1,7 @@
 ﻿namespace DiscordBot.Models;
 public class Light_Cone
 {
+    public int Light_ConeId { get; set; }
     public string Id { get; set; }
     public string Name { get; set; }
     public int Rarity { get; set; }

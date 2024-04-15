@@ -3,6 +3,7 @@
 namespace DiscordBot.Models;
 public class Skills
 {
+    public int SkillsId { get; set; }
     public string Id { get; set; }
     public string Name { get; set; }
     public int Level { get; set; }

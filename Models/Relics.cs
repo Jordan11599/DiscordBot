@@ -1,6 +1,7 @@
 ﻿namespace DiscordBot.Models;
 public class Relics
 {
+    public int RelicsId { get; set; }
     public string Id { get; set; }
     public string Name { get; set; }
     public string Set_Id { get; set; }

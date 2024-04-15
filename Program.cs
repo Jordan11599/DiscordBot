@@ -6,6 +6,7 @@ using DisCatSharp.CommandsNext;
 using System.Reflection;
 using DisCatSharp.VoiceNext;
 using DisCatSharp.Entities;
+using Microsoft.Extensions.DependencyInjection;
 
 
 namespace DiscordBot;
@@ -14,9 +15,7 @@ class Program
 {
     static void Main(string[] args)
     {
-
         MainAsync().GetAwaiter().GetResult();
-
     }
 
     static async Task MainAsync()
@@ -32,11 +31,17 @@ class Program
             Intents = DiscordIntents.AllUnprivileged | DiscordIntents.MessageContent
         });
 
+        var services = new ServiceCollection().AddSingleton<DBConnection>().BuildServiceProvider();
+        
+        
+        
+        
         discord.UseVoiceNext();
 
         var commands = discord.UseCommandsNext(new CommandsNextConfiguration()
         {
-            StringPrefixes = new List<string> { ";" }
+            StringPrefixes = new List<string> { ";" },
+            ServiceProvider = services
         });
 
         commands.RegisterCommands(Assembly.GetExecutingAssembly());

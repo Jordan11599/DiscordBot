@@ -1,6 +1,7 @@
 ﻿namespace DiscordBot.Models;
 public class Characters
 {
+    public int CharactersId { get; set; }
     public string Id { get; set; }
     public string Name { get; set; }
     public int Rarity { get; set; }
