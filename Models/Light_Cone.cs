@@ -1,6 +1,9 @@
-﻿namespace DiscordBot.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DiscordBot.Models;
 public class Light_Cone
 {
+    [Key]
     public int Light_ConeId { get; set; }
     public string Id { get; set; }
     public string Name { get; set; }
@@ -11,7 +14,7 @@ public class Light_Cone
     public string Icon { get; set; }
     public string Preview { get; set; }
     public string Portrait { get; set; }
-    public Path Path { get; set; }
+    public Path? Path { get; set; }
     public List<Attributes> Attributes { get; set; }
     public List<Properties> Properties { get; set; }
 

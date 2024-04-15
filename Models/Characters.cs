@@ -1,6 +1,9 @@
-﻿namespace DiscordBot.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DiscordBot.Models;
 public class Characters
 {
+    [Key]
     public int CharactersId { get; set; }
     public string Id { get; set; }
     public string Name { get; set; }
@@ -11,11 +14,11 @@ public class Characters
     public string Icon { get; set; }
     public string Preview { get; set; }
     public List<string> Rank_Icons { get; set; }
-    public Path Path { get; set; }
-    public Element Element { get; set; }
+    public Path? Path { get; set; }
+    public Element? Element { get; set; }
     public List<Skills> Skills { get; set; }
     public List<Skill_Trees> Skill_Trees { get; set; }
-    public Light_Cone Light_Cone { get; set; }
+    public Light_Cone? Light_Cone { get; set; }
     public List<Relics> Relics { get; set; }
     public List<Relic_Sets> Relic_Sets { get; set; }
     public List<Attributes> Attributes { get; set; }

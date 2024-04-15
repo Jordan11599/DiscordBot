@@ -1,14 +1,16 @@
-﻿using System.Xml.Linq;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
 
 namespace DiscordBot.Models;
 public class Skills
 {
+    [Key]
     public int SkillsId { get; set; }
     public string Id { get; set; }
     public string Name { get; set; }
     public int Level { get; set; }
     public int Max_Level { get; set; }
-    public Element Element { get; set; }
+    public Element? Element { get; set; }
     public string Type { get; set; }
     public string Type_Text { get; set; }
     public string Effect { get; set; }

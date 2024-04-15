@@ -1,6 +1,12 @@
-﻿namespace DiscordBot.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+
+namespace DiscordBot.Models;
+
+
 public class Relic_Sets
 {
+    [Key]
     public int Relic_SetsId { get; set; }
     public string Id { get; set; }
     public string Name { get; set; }

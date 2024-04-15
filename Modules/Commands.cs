@@ -41,19 +41,18 @@ public class Commands : BaseCommandModule
     public async Task Registered(CommandContext ctx, int UID)
     {
         var user = await Utils.API.Initializing.CallAPI(UID);
+
+
         try
         {
-            _connection.User.Add(user);
+            //change weee to ctx.discord_id later
+            user.Discord_Id = "WEEEEEEEE";
+            user.UID = "WOOOOOOOO";
+            var success = _connection.User.Add(user);
+            _connection.SaveChanges();
         } catch (Exception ex)
         {
             Console.WriteLine(ex);
-            // "The instance of entity type 'Element' cannot be tracked because another instance
-            // with the same key value for {'Id'} is already being tracked. When attaching existing
-            // entities, ensure that only one entity instance with a given key value is attached.
-            // Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting
-            // key values."}
-            //Tomorrows issue!
-
         }
 
         //var test = _connection.User.First();
