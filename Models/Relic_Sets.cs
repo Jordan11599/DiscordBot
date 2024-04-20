@@ -1,8 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace DiscordBot.Models;
-
 
 public class Relic_Sets
 {

@@ -15,6 +15,4 @@ public class Embed
         return embed.Build();
     }
 
-
-
 }

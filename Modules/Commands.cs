@@ -32,8 +32,7 @@ public class Commands : BaseCommandModule
 
     [Command("getdata")]
     public async Task getdata(CommandContext ctx)
-    {
-        
+    {        
         await ctx.RespondAsync("a");
         //await ctx.RespondAsync(Embed.GetCustomHelpCommandEmbed(ctx));
     }
@@ -46,7 +45,6 @@ public class Commands : BaseCommandModule
 
         try
         {
-            //change weee to ctx.discord_id later
             user.Discord_Id = "Value_Discord_Id";
             user.UID = "Value_UID";
             var success = _connection.User.Add(user);

@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
-
-namespace DiscordBot.Models;
+﻿namespace DiscordBot.Models;
 
 public class User
 {
